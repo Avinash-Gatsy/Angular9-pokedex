@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center; //vertically align text
+    border: 1px solid steelblue;
+    background-color: aliceblue;
+    font-family: monospace;
+    color: chocolate;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    border-top: 2px dotted steelblue;
+}
+ul{
+    list-style-type: trad-chinese-formal;
+    color: steelblue;
+    display: flex;
+    justify-content: space-around;
+    font-size: large;
+    text-transform: uppercase;
+}
+.main-content{
+    display: flex;
+    justify-content: center;
+}

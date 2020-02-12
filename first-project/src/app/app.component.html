@@ -1,0 +1,13 @@
+<h4>{{title}}</h4>
+<div>
+  Today Date : {{today | date}} <br>
+  Today Date 'chaining of pipes' : {{today | date | uppercase}} <br>
+  Today Date Formatted - 'passing custom params to date pipe' : {{today | date:'dd/MM/yyyy'}}
+</div>
+<div>
+  Emp Details: {{emp | json}} <br>
+  <div *ngFor="let i of emp | keyvalue">
+    <span *ngIf="i.key == 'salary'">{{i.value | currency: 'INR' | amount}}</span>
+  </div>
+  <div [innerHtml]="emoji | safe:'html'" (mouseenter)="changeEmoji('enter')" (mouseleave)="changeEmoji('leave')"></div>
+</div>

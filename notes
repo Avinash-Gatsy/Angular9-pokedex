@@ -1,0 +1,99 @@
+
+Emojis in HTML
+
+To use emojis in HTML, the first thing we need to do is set the document's character encoding to UTF-8. This ensures our emojis display consistently across the variety of browsers and devices your users may be running. Doing this is simple. Inside your head tag, be sure to specify the following meta tag:
+<meta charset="UTF-8">
+
+DOM Sanitizer
+https://medium.com/@swarnakishore/angular-safe-pipe-implementation-to-bypass-domsanitizer-stripping-out-content-c1bf0f1cc36b
+
+
+load custom component on launch
+1. index.html : change the <app-root> selector to custom component selector
+2.
+	app.module.ts
+	@NgModule({
+		bootstrap: [XYZcomponent]
+	})
+
+	//XYZcomponent ->  this is the  component that will load 1st
+
+Routing
+1. define the routes in app-routing.module.ts
+2. use [routerLink]="['/route_name']"
+3. specify <router-outlet></router-outlet> : inside this respective component will get loaded
+
+using multiple router-outlets :
+https://www.techiediaries.com/angular-router-multiple-outlets/
+https://stackoverflow.com/questions/51223222/angular-6-multiple-router-outlets
+
+per module we can have only one routing module
+main module - will have one routing module, use loadChildren in its routing module and when corresponding child modules are loaded they have thier routing module
+
+pass data while routing : router.navigate(['route'], navigationExtras)
+HTML -> [routerLink]=['/path',params]
+change the route along with data to be received in respective route in routing module
+example -> 'path/:empId'
+
+Latest version of angular (7.2 +) now has the option to pass additional information using NavigationExtras.
+https://stackoverflow.com/questions/44864303/send-data-through-routing-paths-in-angular
+https://www.thepolyglotdeveloper.com/2016/10/passing-complex-data-angular-2-router-nativescript/
+
+read the data passed, like params etc using ActivatedRoute
+
+constructor
+
+constructor is a lifecycle method that will be implicitly called and it cannot be explicitly called.
+It is the 1st method to be inovoked on launch of component
+constructor is used to initialize the varibales. 
+Instead of writing:  this.a = a, this.b = b in constructor, in angular we can use public, private, protected infront of the varibales which will initialize them automatically.
+After constructor() , ngOnInit() will be inovoked.
+
+Directives
+structural directives - *ngIf, *ngFor ...
+
+align items in div both vertically and horizontally
+	display:flex;
+	justify-content:center; -> if flex direction is row,this will algin items horizontally or vice-versa
+	align-items:center; -> opposite to justify-content
+
+importing JSON file in angular
+in tsconfig.json under compilerOptions add -> "resolveJsonModule": true,
+https://www.techiediaries.com/import-local-json-files-in-typescript/
+
+splice vs slice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

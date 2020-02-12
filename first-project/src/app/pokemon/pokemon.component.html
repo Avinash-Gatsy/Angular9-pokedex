@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="showPokemon">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId}}.png" 
+        alt="pokemonName">
+    </div>
+    <div>
+        Employee Id: {{empObj.empId}}<br>
+        Employee Name: {{empObj.empName}} <br>
+        Employee Salary: {{empObj.salary | currency: 'INR'}}<br>
+        Employee Department: {{empObj.depId}}
+        <span [innerHtml]="editEmoji | safe: 'html'"(click)="editMode = !editMode">
+        </span>
+    </div>
+    <ng-container *ngIf="editMode">
+        <app-edit-employee [empObj]="empObj"></app-edit-employee>
+    </ng-container>
+</div>

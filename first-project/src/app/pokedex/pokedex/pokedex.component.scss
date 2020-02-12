@@ -1,0 +1,16 @@
+table{
+    border: 1px solid silver;
+    thead tr{
+        th{
+            width: 150px;
+            border: 1px solid blueviolet;
+            background-color: lavender;
+            color: blueviolet;
+            text-transform: uppercase;
+        }
+    }
+    tbody tr td{
+        border: 1px dotted silver;
+        text-align: center;
+    }
+}
