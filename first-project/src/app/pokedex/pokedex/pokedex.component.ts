@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as pokedex from '../../data/pokedex.json';
 import { Router, NavigationExtras } from '@angular/router';
+import { ConnectToNodeService } from 'src/app/services/connect-to-node.service.js';
 
 @Component({
   selector: 'app-pokedex',
@@ -9,11 +10,16 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class PokedexComponent implements OnInit {
   displayPokedex: any[];
-  constructor(private router: Router) { }
+  constructor(private router: Router, private backendService: ConnectToNodeService) { }
 
   ngOnInit(): void {
     this.displayPokedex = pokedex['default'].slice(0, 12);
-    console.dir(this.displayPokedex);
+    //console.dir(this.displayPokedex);
+    this.backendService.getPokedex().subscribe((data)=>{
+      console.dir(data);
+    }, (err) => {
+      console.dir(err);
+    });
   }
   onClick(e, i){
     const navigationExtras: NavigationExtras = {

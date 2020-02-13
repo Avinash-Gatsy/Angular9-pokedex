@@ -63,6 +63,13 @@ https://www.techiediaries.com/import-local-json-files-in-typescript/
 
 splice vs slice
 
+HttpClient
+by default it will return response body
+if we want to observe all the params like response status etc, use  {observe: 'response'}
+	this.http.get(`${this.REST_API_SERVER}/pokedex`, {observe: 'response'}).subscribe(res => {
+      console.dir(res);
+    })
+
 
 
 

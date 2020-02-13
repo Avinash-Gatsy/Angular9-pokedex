@@ -1,0 +1,39 @@
+Node is mainly used to stream data, chat rooms etc. 
+Not high CPU intensive work but faster performance
+
+res.send()
+
+    app.get('/pokedex', (req, res)=>{
+        res.send('Request received from Dhondaprawn pokemon training company');
+        res.send('...fetching details...');
+        res.end();
+    });
+
+only the 1st response will be sent, and we get below error
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+
+res.write()
+    app.get('/pokedex', (req, res)=>{
+        res.write('Request received from Dhondaprawn pokemon training company');
+        res.write('...fetching details...');
+        res.end();
+    });
+unlike res.send() -> this will send both data
+
+middleware? body-parser
+    //middleware
+    app.use(cors());
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded());
+
+//we can send only a string in res.end();
+res.end(JSON.stringify(pokedexDataJsonCopy.splice(index, 1)));
+
+send custom status and custom message
+https://stackoverflow.com/questions/14154337/how-to-send-a-custom-http-status-message-in-node-express
+    if(index < 0){
+        res.status(404).send('index paathu req pannnu da venna');
+        res.end();
+    }
+
+https://www.w3schools.com/nodejs/nodejs_mongodb_insert.asp
