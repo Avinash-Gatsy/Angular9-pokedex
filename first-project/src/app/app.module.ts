@@ -11,6 +11,7 @@ import { Pnf404Component } from './pnf404/pnf404.component';
 import { EditEmployeeComponent } from './pokemon/edit-employee/edit-employee.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { PokedexComponent } from './pokedex/pokedex/pokedex.component';
+import { LoaderDirective } from './directives/loader.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PokedexComponent } from './pokedex/pokedex/pokedex.component';
     Pnf404Component,
     EditEmployeeComponent,
     SafePipe,
-    PokedexComponent
+    PokedexComponent,
+    LoaderDirective
   ],
   imports: [
     BrowserModule,

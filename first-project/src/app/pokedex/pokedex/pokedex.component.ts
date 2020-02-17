@@ -10,13 +10,17 @@ import { ConnectToNodeService } from 'src/app/services/connect-to-node.service.j
 })
 export class PokedexComponent implements OnInit {
   displayPokedex: any[];
+  showLoader: boolean;
   constructor(private router: Router, private backendService: ConnectToNodeService) { }
 
   ngOnInit(): void {
-    this.displayPokedex = pokedex['default'].slice(0, 12);
-    //console.dir(this.displayPokedex);
+    this.showLoader = true;
     this.backendService.getPokedex().subscribe((data)=>{
-      console.dir(data);
+      //just to see the spinner
+      setTimeout(()=>{
+        this.displayPokedex = data.slice(0,12);
+        this.showLoader = false;
+      },2000);
     }, (err) => {
       console.dir(err);
     });
